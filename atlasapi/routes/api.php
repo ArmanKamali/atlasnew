@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/user/generate-password', [\App\Http\Controllers\AuthController:: class, 'generatePassword']);
+Route::post('/user/login', [\App\Http\Controllers\AuthController:: class, 'login']);
+Route::post('/user/info', [\App\Http\Controllers\AuthController:: class, 'userInfo']);
+Route::post('/buy', [\App\Http\Controllers\BuyController:: class, 'index']);
+Route::post('/buy/upload-image', [\App\Http\Controllers\BuyController:: class, 'uploadImage']);
+Route::post('/admin/login', [\App\Http\Controllers\AdminController:: class, 'login']);
+Route::post('/user/get-provinces', [\App\Http\Controllers\AuthController:: class, 'getProvinces']);
+Route::post('/user/edit-user', [\App\Http\Controllers\AuthController:: class, 'editUser']);
