@@ -1,0 +1,12 @@
+.borderTopDown {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction:row;
+}
+.wrapper div{
+    margin-left: 30px;
+}

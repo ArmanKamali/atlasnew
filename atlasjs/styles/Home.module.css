@@ -1,0 +1,22 @@
+.container {
+  background: rgba(238, 230, 202, 0.3);
+  min-height: calc(100vh - 135px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0;
+}
+
+.background {
+  text-align: center;
+  background-color: blue;
+}
+
+.particles {
+  /* flex-grow: 5; */
+  height: 900px;
+  position: absolute;
+}
+
+

@@ -1,0 +1,299 @@
+.firstBackground {
+    position:relative;
+    border: 6px solid #028F7D;
+    border-radius: 600px;
+    background-image: url(/images/1.png);
+
+    min-width: 230px;
+    max-width: 230px;
+    min-height: 450px;
+    max-height: 450px;
+    margin-top: 250px;
+    margin-right: -45px;
+
+}
+
+.silverE {
+    position: absolute;
+    background-image: url(/images/silverelipse.png);
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+    top: -30px;
+    left: -30px;
+    transition:5s all;
+}
+
+.silverE:hover{
+    transform : rotate(360deg);
+}
+
+.secondBackground {
+    position: relative;
+    margin-top: 10px;
+    background: url(/images/2.png);
+    width: 350px;
+    height: 653px;
+    border: 0.5px solid #000000;
+    border-radius: 1000px;
+}
+
+.thirdBackground {
+    position: relative;
+    margin-left: -70px;
+    margin-top: 70px;
+    width: 330px;
+    background: url(/images/3.png);
+    height: 430px;
+    border: 6px solid #077E67;
+    border-radius: 500px;
+}
+
+
+.goldE {
+    position: absolute;
+    background-image: url(/images/goldelipse.png);
+    width: 150px;
+    height: 150px;
+    z-index: 2;
+    bottom: -26px;
+    right: -100px;
+    transition:5s all;
+}
+
+.goldE:hover{
+    transform : rotate(-360deg);
+    /* transform : rotate3d(360deg) */
+}
+.backgrounds {
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+}
+
+.backgroundContainer {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-top: 0;
+}
+
+
+
+
+.ofoghi1 {
+    position: absolute;
+    left: 0;
+    top: 147px;
+    transition: 1s all;
+
+}
+
+.ofoghi1:hover {
+    top: 180px;
+}
+
+.ofoghi1 .amoodi1 {
+    width: 50px;
+    height: 50px;
+    background: rgba(172, 187, 120, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ofoghi1 .amoodi2 {
+    width: 50px;
+    height: 280px;
+    background: rgba(240, 152, 25, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.ofoghi1 .amoodi3 {
+    width: 50px;
+    height: 60px;
+    background: rgba(7, 101, 133, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.ofoghi2 {
+    position: absolute;
+    left: 65px;
+    top: 73px;
+    transition: 1s all;
+}
+
+.ofoghi2:hover {
+    top: 30px;
+}
+
+.ofoghi2 .amoodi1 {
+    width: 30px;
+    height: 50px;
+    background: rgba(7, 101, 133, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ofoghi2 .amoodi2 {
+    width: 30px;
+    height: 145px;
+    background: rgba(255, 75, 43, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.ofoghi2 .amoodi3 {
+    width: 30px;
+    height: 30px;
+    background: rgba(52, 143, 80, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.ofoghi2 .amoodi4 {
+    position: relative;
+    width: 31.82px;
+    height: 73.46px;
+    top: 216px;
+    background: rgba(52, 143, 80, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.ofoghi3 {
+    position: absolute;
+    left: 116.5px;
+    top: 73.5px;
+    transition: 1s all;
+
+
+}
+
+.ofoghi3:hover {
+    top: 110px;
+}
+
+.ofoghi3 .amoodi1 {
+    width: 30px;
+    height: 75px;
+    background: rgba(240, 152, 25, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.ofoghi3 .amoodi2 {
+    position: relative;
+    top: 47.44px;
+    width: 30px;
+    height: 125px;
+    background: rgba(51, 77, 80, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ofoghi3 .amoodi3 {
+    width: 30px;
+    height: 100px;
+    background: rgba(203, 202, 165, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.ofoghi4 {
+    position: absolute;
+    right: 98px;
+    top: 97.95px;
+    transition: 1s all;
+
+}
+
+.ofoghi4:hover {
+    top: 60px;
+}
+
+.ofoghi4 .amoodi1 {
+    width: 65px;
+    height: 415px;
+    background: rgba(172, 187, 120, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 30px 30px 0px 0px;
+}
+
+.ofoghi4 .amoodi2 {
+    width: 65px;
+    height: 50px;
+    background: rgba(7, 101, 133, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 30px 30px;
+
+}
+
+.ofoghi5 {
+    position: absolute;
+    right: 54.39px;
+    top: 73.84px;
+    transition: 1s all;
+
+}
+
+.ofoghi5:hover {
+    top: 115px;
+}
+
+.ofoghi5 .amoodi1 {
+    width: 30px;
+    height: 50px;
+    background: rgba(51, 77, 80, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ofoghi5 .amoodi2 {
+    width: 30px;
+    height: 145px;
+    background: rgba(7, 101, 133, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.ofoghi5 .amoodi3 {
+    width: 30px;
+    height: 120px;
+    background: rgba(255, 75, 43, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.ofoghi6 {
+    position: absolute;
+    right: 0;
+    top: 110px;
+    transition: 1s all;
+
+}
+
+.ofoghi6:hover {
+    top: 70px;
+}
+
+.ofoghi6 .amoodi1 {
+    width: 45px;
+    height: 45px;
+    background: rgba(52, 143, 80, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ofoghi6 .amoodi2 {
+    width: 45px;
+    height: 345px;
+    background: rgba(51, 77, 80, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.ofoghi6 .amoodi3 {
+    width: 45px;
+    height: 45px;
+    background: rgba(240, 152, 25, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+}
