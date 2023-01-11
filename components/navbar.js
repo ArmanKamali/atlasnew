@@ -7,7 +7,8 @@ export default function Navbar() {
     const pages = [
         {id : 1, name:'', perName : 'داشبورد'},
         {id : 2, name:'factors', perName : 'فاکتورها'},
-        {id : 3, name: 'email', perName : 'ایمیل مارکتینگ'}
+        {id : 3, name: 'email', perName : 'ایمیل مارکتینگ'},
+        {id : 4, name: 'sms', perName : 'اس ام اس مارکتینگ'}
     ]
     return (
         <div className={styles.container}>

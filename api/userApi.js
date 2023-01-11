@@ -9,7 +9,7 @@ let config = {
 
 export const loginApi = async (user) => {
     try {
-        const data = await http.post(`${http.url}/admin/login`, user, config)
+        const data = await http.post(`${http.url}/login`, user, config)
         return data
     } catch (e) { return e.response}
 }

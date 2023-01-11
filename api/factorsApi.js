@@ -9,7 +9,7 @@ let config = {
 
 export const getFactorsSummeryApi = async (data) => {
     try {
-        const result = await http.post(`${http.url}/admin/get-factors-summery`, data, config)
+        const result = await http.post(`${http.url}/get-factors-summery`, data, config)
         return result
     } catch (e) { return e.response}
 }

@@ -52,7 +52,7 @@ export default function Login() {
             <div className={styles.container}>
                 <div>
                     <h1 className={styles.title}>
-                        <Image src="/icons/back.png" width="30" height="30" alt="back-icon" />
+                        <Image src="icons/back.png" width="30" height="30" alt="back-icon" />
                         <div>
                             صفحه ورود ادمین مارک گلد
                         </div>
