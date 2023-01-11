@@ -1,0 +1,13 @@
+.factorWrapper{
+    display:flex;
+    flex-direction: column;
+    margin: 20px;
+    max-height: 500px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    min-width: 700px;
+    min-height: 400px;
+    align-items: center;
+    justify-content: center;
+  }

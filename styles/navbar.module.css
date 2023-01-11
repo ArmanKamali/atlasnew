@@ -1,0 +1,37 @@
+.container{
+    background: linear-gradient(#536976 0%, #292E49 100%);
+    width: 300px;
+    color: white;
+}
+
+.profileContainer{
+    margin: 10px;
+    padding: 10px;
+}
+.profileContainer div{
+    margin-top: 3px;
+}
+
+.item{
+    display: block;
+    text-decoration: none;
+    color : white;
+    width:100%;
+    padding: 15px;
+    border-left: none;
+    background-color: rgba(0,0,0,0);
+    transition: 0.3s all;
+    margin-top : 10px;
+    
+}
+
+.item:hover{
+    color : white;
+    border-left: 5px solid gray;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.active{
+    border-left: 5px solid red;
+    background-color: rgba(0,0,0,0.5);
+}
