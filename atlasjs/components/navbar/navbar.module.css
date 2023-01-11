@@ -1,9 +1,13 @@
 .container {
     display: flex;
+    position:fixed;
+    width: 100vw;
     flex-direction: row;
     justify-content: center;
     padding: 30px 0;
     align-items: flex-start;
+    background-color: white;
+    z-index:1;
 
 }
 
@@ -30,7 +34,6 @@
 .childWrapper {
     overflow: hidden;
     max-height: 0;
-    
     transition: max-height 2s;
     
 }

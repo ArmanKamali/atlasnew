@@ -3,6 +3,7 @@ import { Particle } from '../components/particle'
 import styles from '../styles/Home.module.css'
 
 
+
 export default function Home() {
 
   return (
@@ -10,7 +11,15 @@ export default function Home() {
       <div className={styles.particles}>
         <Particle />
       </div>
-      <Background/>
+      <div className="d-flex flex-column">
+        <Background />
+        <h1 className="text-center fw-bold">
+          شیشه خم اطلس
+        </h1>
+        <h className="text-center">
+          Atlas Bent Glass
+        </h>
+      </div>
     </div>
   )
 }

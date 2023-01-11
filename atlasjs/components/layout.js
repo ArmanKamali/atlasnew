@@ -2,8 +2,27 @@ import styles from '../styles/layout.module.css'
 import Head from "next/head";
 import Navbar from './navbar/navbar';
 import Footer from './footer/footer';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { getCatApi, getCategoryApi } from '../api/product';
+import { setNavbarCategory } from '../redux/constsReducer';
+import { setCategory } from '../redux/productReducer';
+import { setCatRefresh } from '../redux/eventReducer';
 
 export default function Layout({ children }) {
+    const cat_refresh = useSelector(state => state.reducer.event.cat_refresh)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        const getCategory = async () => {
+            let result = await getCategoryApi();
+            dispatch(setNavbarCategory(result.filter(item => item.type === 1)))
+            dispatch(setCategory(result))
+
+        }
+
+        getCategory();
+    }, [])
+
     return (
         <div className={styles.container}>
             <Head>
@@ -17,9 +36,9 @@ export default function Layout({ children }) {
                 <link rel="icon" href="/icons/logo.png" />
             </Head>
 
-            <Navbar/>
-            <main>{children}</main>
-            <Footer/>
+            <Navbar />
+            <main className={styles.mainWrapper}>{children}</main>
+            <Footer />
         </div>
     )
 }

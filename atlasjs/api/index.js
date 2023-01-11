@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "https://api3.markgold.ir/api";
+const url = "https://puzzle.atlasbentglass.com/api";
 
 
 export default {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './navbar.module.css'
+import Products from './products';
 
 const Item = ({ data }) => {
     return (
@@ -20,7 +21,13 @@ const Item = ({ data }) => {
                 </div>
                 {data.childs ?
                     <div className={styles.childWrapper}>
-                        {data.childs.map(child => <div key={child.id} >{child.text}</div>)}
+                        {data.name === 'products' ?
+                            <Products data/> :
+                            data.childs.map(child =>
+                                <div className="mt-2" key={child.id} >{child.name}</div>
+
+                            )
+                        }
                     </div>
                     : null
                 }

@@ -3,10 +3,47 @@
     border-bottom: 1px solid black;
 }
 
+
+.wrapper div {
+    margin-left: 30px;
+}
+
+.footerContact {
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px 0 30px;
+    min-width: 17%;
+    justify-content: space-between;
+}
+
+.emailAddress {
+    background: linear-gradient(270.01deg, #077E67 16.29%, rgba(209, 209, 209, 0) 99.99%);
+    border: 0.5px solid #13846E;
+    color:white;
+    width: 100%;
+}
+
+.emailAddress::placeholder{
+    color:white;
+    padding-right: 20px;
+}
+
+.iconsHolder{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:60%;
+    padding: 10px 10px;
+}
+
+.logo{
+    margin-right : 3%;
+    align-self: center;
+}
+
 .wrapper{
     display:flex;
-    flex-direction:row;
-}
-.wrapper div{
-    margin-left: 30px;
+    flex-direction : row;
+    margin : 30px 0 50px 0;
+    margin-top: 250px;
 }

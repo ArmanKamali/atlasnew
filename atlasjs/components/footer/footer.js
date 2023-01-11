@@ -11,18 +11,18 @@ const Footer = () => {
     ]
     return (
         <div className={styles.wrapper}>
-            <div className="d-flex justify-content-between flex-column">
-                <div className={styles.borderTopDown}>ارتباط از طریق ایمیل</div>
+            <div className={styles.footerContact}>
+                <div className={`${styles.borderTopDown} fw-bold`}>ارتباط از طریق ایمیل</div>
                 <div className={styles.borderTopDown}>
                     <SubscribeEmail />
                 </div>
             </div>
 
-            <div className={`${styles.borderTopDown} d-flex flex-row`}>
+            <div className={`${styles.borderTopDown} ${styles.iconsHolder}`}>
                 {icons.map(icon => <AddIcon key={icon.id} data={icon} />)}
             </div>
 
-            <div>
+            <div className={styles.logo}>
                 <Image
                     src="/icons/logo.png"
                     alt="logo"
