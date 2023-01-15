@@ -1,9 +1,14 @@
+import { useEffect } from 'react'
+
 const Products = () => {
-    return ( 
+    useEffect(() => {
+         
+    }, [])
+    return (
         <div>
             ARMAN
         </div>
-     );
+    );
 }
- 
+
 export default Products;

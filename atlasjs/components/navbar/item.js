@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './navbar.module.css'
 import Products from './products';
@@ -8,9 +9,16 @@ const Item = ({ data }) => {
         <div className={styles.itemContainer}>
             <div className="w-100">
                 <div className="d-flex flex-row justify-content-between w-90">
-                    <div>
-                        {data.perName}
-                    </div>
+                    {data.name === "products" ?
+                            <Link href="/product">
+                                {data.perName}
+                            </Link>
+                     
+                            :
+                        <div>
+                            {data.perName}
+                        </div>
+                    }
                     <Image
                         src="/icons/plus.png"
                         width="11"
@@ -22,7 +30,8 @@ const Item = ({ data }) => {
                 {data.childs ?
                     <div className={styles.childWrapper}>
                         {data.name === 'products' ?
-                            <Products data/> :
+
+                            <Products category={data} /> :
                             data.childs.map(child =>
                                 <div className="mt-2" key={child.id} >{child.name}</div>
 

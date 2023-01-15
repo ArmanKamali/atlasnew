@@ -16,9 +16,9 @@ export default function Home() {
         <h1 className="text-center fw-bold">
           شیشه خم اطلس
         </h1>
-        <h className="text-center">
+        <h1 className="text-center">
           Atlas Bent Glass
-        </h>
+        </h1>
       </div>
     </div>
   )
