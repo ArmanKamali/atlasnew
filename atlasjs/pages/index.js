@@ -1,5 +1,5 @@
-import Background from '../components/Background'
-import { Particle } from '../components/particle'
+import Background from '../components/home/Background'
+import { Particle } from '../components/utils/particle'
 import styles from '../styles/Home.module.css'
 
 
@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.homeContainer}`}>
       <div className={styles.particles}>
         <Particle />
       </div>

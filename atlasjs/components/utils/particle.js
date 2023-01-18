@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import particleData from './utils/particle.json'
+import particleData from './particle.json'
 export const Particle = () => {
     let config = JSON.parse(JSON.stringify(particleData))
     const particlesInit = useCallback(async engine => {

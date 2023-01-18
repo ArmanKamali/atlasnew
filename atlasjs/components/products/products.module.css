@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 100%;
+}
+
+.productWrapper {
+    width: 32%;
+    aspect-ratio: 1;
+    margin-top:3%;
+    background: linear-gradient(180deg, #DCDCDC 0%, #6C6B6B 100%);
+    border: 1px solid #000000;
+    margin-bottom: 1%;
+}

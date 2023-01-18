@@ -3,7 +3,7 @@ import http from './'
 
 let config = {
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     }
 }
 

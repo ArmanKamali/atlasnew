@@ -10,7 +10,7 @@ const Item = ({ data }) => {
             <div className="w-100">
                 <div className="d-flex flex-row justify-content-between w-90">
                     {data.name === "products" ?
-                            <Link href="/product">
+                            <Link href="/products/all">
                                 {data.perName}
                             </Link>
                      

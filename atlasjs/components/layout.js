@@ -3,23 +3,20 @@ import Head from "next/head";
 import Navbar from './navbar/navbar';
 import Footer from './footer/footer';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { getCatApi, getCategoryApi } from '../api/product';
+import { useDispatch } from 'react-redux'
+import { getCategoryApi } from '../api/product';
 import { setNavbarCategory } from '../redux/constsReducer';
 import { setCategory } from '../redux/productReducer';
-import { setCatRefresh } from '../redux/eventReducer';
 
 export default function Layout({ children }) {
-    const cat_refresh = useSelector(state => state.reducer.event.cat_refresh)
     const dispatch = useDispatch()
     useEffect(() => {
         const getCategory = async () => {
             let result = await getCategoryApi();
+            console.log(result);
             dispatch(setNavbarCategory(result.filter(item => item.type === 1)))
             dispatch(setCategory(result))
-
         }
-
         getCategory();
     }, [])
 

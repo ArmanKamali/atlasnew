@@ -22,13 +22,7 @@ const Footer = () => {
                 {icons.map(icon => <AddIcon key={icon.id} data={icon} />)}
             </div>
 
-            <div className={styles.logo}>
-                <Image
-                    src="/icons/logo.png"
-                    alt="logo"
-                    width="58"
-                    height="58" />
-            </div>
+     
         </div>
     );
 }
