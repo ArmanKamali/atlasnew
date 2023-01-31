@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 100%;
+}
+
+.productWrapper {
+    width: 32%;
+    aspect-ratio: 1;
+    margin-top: 3%;
+    background: linear-gradient(180deg, #DCDCDC 0%, #6C6B6B 100%);
+    border: 1px solid #000000;
+    margin-bottom: 1%;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 40%;
+}
+
+.image {
+    width: 100%;
+    height: 75%;
+    border: 1px solid #000000;
+    border-radius: 0px 0px 20px 20px;
+    transition: 0.2s all;
+}
+
+.image:hover {
+    border: 5px solid #1E8974;
+    border-radius: 0px 0px 20px 20px;
+}

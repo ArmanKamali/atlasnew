@@ -1,0 +1,5 @@
+export {default as Item} from './item'
+export {default as ProductsNavbar} from './productsNavbar'
+export {default as LeftSide} from './leftSide'
+export {default as Search} from './search'
+export {default as Main} from './main'
