@@ -19,8 +19,6 @@ class ProductController extends Controller
 
     public function getCategory()
     {
-        
-
         $category = Category::all();
         return $category;
     }
