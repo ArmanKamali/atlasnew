@@ -25,9 +25,9 @@ class Product extends Model
         return $this->hasMany(ProductSubPhoto::class);
     }
 
-    public function detail()
+    public function details()
     {
-        return $this->hasOne(ProductDetail::class);
+        return $this->hasMany(ProductDetail::class);
     }
 
     public function comments()

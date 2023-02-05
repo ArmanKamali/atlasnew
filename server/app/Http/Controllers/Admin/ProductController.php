@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function __construct()
     {
-        header('Access-Control-Allow-Origin:  *');
+        header('Access-Control-Allow-Origin:  http://localhost:3000');
         header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Authorization, Origin');
         header('Access-Control-Allow-Methods:  GET, POST, PUT');
     }
@@ -21,7 +23,24 @@ class ProductController extends Controller
      */
     public function index()
     {
-        echo "ARMAN";           
+        $products = Product::with('categories');
+
+        $products->select(['id', 'name', 'serial', 'price', 'sale', 'photo']);
+        $products->with(['categories' => function ($query) {
+            $query->addSelect('*');
+        }]);
+
+        $products->with(['details' => function ($query) {
+            $query->addSelect('*');
+            $query->with(['glass']);
+        }]);
+
+        $products->with(['product_sub_photos' => function ($query) {
+            $query->orderBy('position');
+            $query->addSelect('*');
+        }]);
+        
+        return $products->get();
     }
 
     /**
@@ -76,7 +95,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data =  $request->except('token');
+        $product = Product::find($id);
+        if ($data['name'] != 'sale_percent')
+            $product->update([$data['name'] => $data['value']]);
+        else
+            $product->update(['sale' => $data['value'] / 100 * $product->price]);
     }
 
     /**

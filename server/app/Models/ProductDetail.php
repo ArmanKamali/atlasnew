@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class ProductDetail extends Model
 {
     protected $fillable = ['product_id', 'length', 'width', 'height',
-        'stand_number', 'stand_id', 'glass_thickness', 'glass_id', 'has_mat'];
+        'stand_number', 'stand_id', 'glass_thickness', 'glass_id', 'has_mat',
+        'd_price' , 'd_saledarsad', 'd_sendtime', 'd_store'
+    
+    ];
 
     public function product()
     {
