@@ -1,0 +1,19 @@
+.ProductRowInput {
+   min-width:3rem
+}
+
+.addPhoto {
+   display:flex;
+   justify-content: center;
+   margin:auto;
+   align-items: center;
+   font-size: 2em;
+}
+
+.photo{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   width: 30%;
+   margin:10px;
+}

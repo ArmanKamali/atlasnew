@@ -20,13 +20,13 @@ export default function Layout({ children }) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>داشبورد ادمین مارک گلد - نسخه بتا</title>
-                <meta name="description" content="داشبورد ادمین مارک گلد" />
+                <title> ادمین اطلس </title>
+                <meta name="description" content="ادمین اطلس" />
                 <link rel="icon" href="/icons/logo.png" />
             </Head>
 
             <Navbar />
-            <main>{children}</main>
+            <main className="w-100">{children}</main>
         </div>
     )
 }
