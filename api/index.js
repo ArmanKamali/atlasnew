@@ -9,6 +9,5 @@ export default {
     put : axios.put,
     delete : axios.delete,
     url,
-    withCredentials : true,
-    
+    withCredentials : true
 }
