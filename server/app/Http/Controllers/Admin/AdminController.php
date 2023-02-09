@@ -24,8 +24,8 @@ class AdminController extends Controller
         $path =  base_path('../public_html/product-photo/');
         $product = Product::find($product_id);
         // برای عوض کردن عکس اصلی محصول
-
-        if ($id == 0) {
+        
+        if ($id == '0') {
             if (glob($path . $product->photo))
                 unlink($path . $product->photo);
 
@@ -38,11 +38,10 @@ class AdminController extends Controller
                 return $file_name;
             }
         }
-        return "ARMAN";
         // عوض کردن مابقی عکس های محصول
         $path = base_path('../public_html/product-subphotos');
 
-        if ($id == 'all') {
+        if ($id == 'new') {
             $photo = new ProductSubPhoto;
             $photo->product_id = $product_id;
         } else
@@ -54,7 +53,14 @@ class AdminController extends Controller
             $photo->photo = $file_name;
             $photo->save();
             $image->move($path, $file_name);
-            return $file_name;
+            return $photo;
         }
+    }
+
+    public function removePhoto(Request $request){
+        $id = $request->id;
+        $photo = ProductSubPhoto::find($id);
+        $photo->delete();
+        return $id;
     }
 }
