@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Esential, Specifications, Photos } from './index'
 const ProductRow = ({ product, glasses }) => {

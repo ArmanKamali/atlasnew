@@ -84,6 +84,21 @@ export const changeProductPhotoApi = async (info,token) => {
             'content-type' : 'multipart/form-data'
         };
         const { data } = await http.post(`${http.url}/admin/product/change-photo`, info, config);
+        return data;
+    } catch (e) {
+        console.log(e)
+        return e.response;
+    }
+};
+
+
+export const removeProductPhotoApi = async (info) => {
+    try {
+        const config = {
+            headers: { Authorization: `Bearer ${info.token}` },
+            'content-type' : 'multipart/form-data'
+        };
+        const { data } = await http.post(`${http.url}/admin/product/remove-photo`, info, config);
         console.log(data)
         return data;
     } catch (e) {

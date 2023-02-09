@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         getCsrfToken();
     }, [])
     const token = useSelector(state => state.reducer.user.token)
-    if (token == '')
+    if (token == '' || !token)
         return (<Login />)
     return (
         <div className={styles.container}>

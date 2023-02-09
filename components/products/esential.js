@@ -18,24 +18,38 @@ const Esential = ({ setShowDetail, showDetail, product }) => {
 
 
     return (
-        <tr onClick={() => setShowDetail(!showDetail)}>
-            <td>
-                <Image width={150} height={150} src={`https://www.atlasbentglass.com/product-photo/${product.photo}`} alt={product.name} />
+        <table className="table table-striped  table-hover  p-5">
+            <thead>
+                <tr>
+                    <th>عکس</th>
+                    <th>نام</th>
+                    <th>سریال</th>
+                    <th>گروه اصلی </th>
+                    <th>گروه فرعی </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onClick={() => setShowDetail(!showDetail)}>
+                    <td>
+                        <Image width={150} height={150} src={`https://www.atlasbentglass.com/product-photo/${product.photo}`} alt={product.name} />
 
-            </td>
-            <td data-name="name">
-                <input type="text" defaultValue={product.name} className="form-control" onChange={(e) => changeElement(e)} data-name="name" /></td>
-            <td>
-                <input type="text" defaultValue={product.serial} className="form-control" onChange={(e) => changeElement(e)} data-name="serial" />
-            </td>
+                    </td>
+                    <td data-name="name">
+                        <input type="text" defaultValue={product.name} className="form-control" onChange={(e) => changeElement(e)} data-name="name" /></td>
+                    <td>
+                        <input type="text" defaultValue={product.serial} className="form-control" onChange={(e) => changeElement(e)} data-name="serial" />
+                    </td>
 
-            <td>
-                {product.categories.filter(category => category.type === 1)[0].name}
-            </td>
-            <td>
-                {product.categories.filter(category => category.type === 2)[0].name}
-            </td>
-        </tr>
+                    <td>
+                        {product.categories.filter(category => category.type === 1)[0].name}
+                    </td>
+                    <td>
+                        {product.categories.filter(category => category.type === 2)[0].name}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
     );
 }
 

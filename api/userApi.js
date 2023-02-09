@@ -10,10 +10,11 @@ export const csrfTokenApi = async () => {
     }
 };
 
-export const loginApi = async () => {
+export const loginApi = async (info) => {
 
     try {
-        const data = await http.get(`${http.url}/admin/login`);
+        const data = await http.post(`${http.url}/admin/login`,info);
+        console.log(data)
         return data;
     } catch (e) {
       return e.response

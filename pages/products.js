@@ -24,23 +24,11 @@ const Products = () => {
         )
 
     return (
-        <div className="table-responsive">
-            <table className="table table-striped  table-hover  p-5">
-                <thead>
-                    <tr>
-                        <th>عکس</th>
-                        <th>نام</th>
-                        <th>سریال</th>
-                        <th>گروه اصلی </th>
-                        <th>گروه فرعی </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {products ?
-                        products.map(product => <ProductRow key={product.id} product={product} glasses={glasses} />) : null
-                    }
-                </tbody>
-            </table>
+        <div>
+            {products ?
+                products.map(product => <ProductRow key={product.id} product={product} glasses={glasses} />) : null
+            }
+           
         </div>
     );
 }
