@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Provider } from 'react-redux'
+import 'react-quill/dist/quill.snow.css'
 import { store, persistor } from '../redux/store'
 import { PersistGate } from 'redux-persist/integration/react';
 import Layout from '../components/layout';

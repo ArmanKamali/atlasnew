@@ -10,4 +10,4 @@ export default {
     delete : axios.delete,
     url,
     withCredentials : true
-}
+} 
