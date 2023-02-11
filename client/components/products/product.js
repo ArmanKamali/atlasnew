@@ -1,9 +1,10 @@
 import styles from './products.module.css'
 import ReactLoading from 'react-loading'
 import Image from 'next/image'
+import { useSelector } from 'react-redux'
 
 const Product = ({ product }) => {
-
+    let photoPath = useSelector(state => state.reducer.consts.photoPath)
     if (!product)
         return (
             <div className={styles.productWrapper}>
@@ -15,7 +16,13 @@ const Product = ({ product }) => {
     )
     return (
         <div className={styles.productWrapper}>
-            <Image src="/1.jpg" width={1000} height={750} alt="product" className={styles.image} />
+            <Image src={`${photoPath}/${product.photo}`} width={750} height={750} alt={product.name} className={styles.image} />
+            <div className={styles.productDetailContainer}>
+                <div className={styles.productDetailName}>
+                    {product.name}
+                </div>
+          
+            </div>
         </div>
     );
 }

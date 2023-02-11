@@ -13,6 +13,7 @@ const Products = () => {
     const [category, setCategory] = useState(false)
     useEffect(() => {
         setCategory(categories.filter(category => category.engName === url[2])[0])
+        console.log(category)
     }, [categories, asPath])
 
 

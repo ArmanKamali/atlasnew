@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $products = Product::with('categories');
 
-        $products->select(['id', 'name', 'serial', 'price', 'sale', 'photo']);
+        $products->select(['id', 'name', 'serial', 'price', 'sale', 'photo','content']);
         $products->with(['categories' => function ($query) {
             $query->addSelect('*');
         }]);

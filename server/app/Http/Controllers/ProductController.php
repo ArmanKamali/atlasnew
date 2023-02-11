@@ -10,21 +10,15 @@ use Illuminate\Support\Facades\Date;
 
 class ProductController extends Controller
 {
-    public function __construct()
-    {
-        header('Access-Control-Allow-Origin:  *');
-        header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Authorization, Origin');
-        header('Access-Control-Allow-Methods:  GET, POST, PUT');
-    }
-
     public function getCategory()
     {
         $category = Category::all();
         return $category;
     }
 
-    public function getProducts(Request $request){
-        $cat_id = $request->all();
+    public function getProducts(){
+        $cat_id = $_GET['cat_id'];
+        return $cat_id;
         $products = Product::all();
         return $products;
     }

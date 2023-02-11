@@ -24,6 +24,8 @@ export const constsReducer = createSlice({
                 ]
             },
         ],
+        photoPath : 'https://www.atlasbentglass.com/product-photo',
+        subPhotoPath : 'https://www.atlasbentglass.com/product-subphotos'
 
     },
     reducers: {

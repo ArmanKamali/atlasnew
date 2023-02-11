@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
 
-module.exports = nextConfig
+
+module.exports = {
+  reactStrictMode: true,
+  trailingSlash: true,
+  images: {
+    // unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.atlasbentglass.com',
+        // port: '',
+        // pathname: '/account123/**',
+      },
+    ],
+  },
+}
