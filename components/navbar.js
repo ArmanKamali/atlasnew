@@ -5,11 +5,12 @@ import NavbarItem from './utils/navbarItem'
 export default function Navbar() {
 
     const pages = [
-        {id : 1, name:'', perName : 'داشبورد'},
-        {id : 2, name:'products', perName : 'محصولات'},
-        {id : 3, name:'factors', perName : 'فاکتورها'},
-        {id : 4, name: 'email', perName : 'ایمیل مارکتینگ'},
-        {id : 5, name: 'sms', perName : 'اس ام اس مارکتینگ'}
+        {id : 1, name:'products', perName : 'کنترل محصولات'},
+        {id : 2, name:'categories', perName : 'کنترل گروهها'},
+        {id : 3, name:'', perName : 'داشبورد'},
+        {id : 4, name:'factors', perName : 'فاکتورها'},
+        {id : 5, name: 'email', perName : 'ایمیل مارکتینگ'},
+        {id : 6, name: 'sms', perName : 'اس ام اس مارکتینگ'}
     ]
     return (
         <div className={styles.container}>

@@ -1,0 +1,16 @@
+.cardWrapper {
+  border: 1px solid aquamarine;
+  border-radius: 8px;
+  background-color: rgb(54, 80, 80);
+
+  color: white;
+  padding: 10px 50px;
+  margin:10px;
+}
+
+
+.childWrapper{
+    background-color: rgb(149, 153, 153);
+
+    color: white;
+}
