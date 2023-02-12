@@ -9,16 +9,15 @@ const ProductsComponent = ({ category }) => {
 
     useEffect(() => {
         setProducts(false)
-        console.log(category)
         const getProducts = async () => {
-            setProducts(await getProductsApi(category ? category.id : 0))
+            if (category === 'all') {
+                setProducts(await getProductsApi(category))
+            }
+            else
+                setProducts(await getProductsApi(category.id))
         }
         getProducts();
     }, [category])
-
-    useEffect(() => {
-        console.log(products);
-    }, [products])
 
     if (!products)
         return (
@@ -30,6 +29,8 @@ const ProductsComponent = ({ category }) => {
     return (
         <div className={styles.container}>
             {products.map(product => <Product key={product.id} product={product} />)}
+            {products.length % 3 === 2 ? <Product /> : null}
+            {products.length % 3 === 1 ? <><Product /><Product /></> : null}
         </div>
     );
 }

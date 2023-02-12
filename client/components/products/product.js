@@ -8,12 +8,10 @@ const Product = ({ product }) => {
     if (!product)
         return (
             <div className={styles.productWrapper}>
-                <div className={styles.loading}>
-                <ReactLoading type={'spin'} color={'gray'} width={150} height={150} className="m-9 " />
-                </div>
+                <Image  src="/images/gray.png"  width={750} height={750} alt="empty" className={styles.image} />
 
             </div>
-    )
+        )
     return (
         <div className={styles.productWrapper}>
             <Image src={`${photoPath}/${product.photo}`} width={750} height={750} alt={product.name} className={styles.image} />
@@ -21,7 +19,7 @@ const Product = ({ product }) => {
                 <div className={styles.productDetailName}>
                     {product.name}
                 </div>
-          
+
             </div>
         </div>
     );

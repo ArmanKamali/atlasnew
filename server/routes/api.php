@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,7 @@ Route::post('admin/login',[\App\Http\Controllers\Admin\UserController:: class, '
 // admin middleware
 Route::middleware([AdminToken::class])->group(function () {
     Route::resource('admin/products',ProductController::class);
+    Route::resource('admin/categories',CategoryController::class);
     Route::resource('admin/detail',ProductDetailController::class);
     Route::get('/admin/get-glasses',[\App\Http\Controllers\Admin\AdminController::class,'getGlasses']);
     Route::post('/admin/product/change-photo',[\App\Http\Controllers\Admin\AdminController::class,'changePhoto']);
