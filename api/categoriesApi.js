@@ -17,3 +17,19 @@ export const getAllCategoriesApi = async (token) => {
         return result.data
     } catch (e) { return e.response }
 }
+
+
+
+export const changeCategoryNameApi = async (data) => {
+    const config = {
+        headers: { Authorization: `Bearer ${data.token}` }
+    };
+
+    try {
+        const result = await http.put(`${http.url}/admin/categories/${data.id}`, data, config)
+        console.log(result.data)
+        return result.data
+    } catch (e) { return e.response }
+}
+
+

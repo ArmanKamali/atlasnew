@@ -1,20 +1,29 @@
 import Navbar from "./navbar";
 import styles from '../styles/layout.module.css'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Login from "../pages/login";
 import Head from "next/head";
 import { useEffect } from "react";
 import { csrfTokenApi } from "../api/userApi";
+import { getAllCategoriesApi } from "../api/categoriesApi";
+import { setCats } from "../redux/dataReducer";
 
 export default function Layout({ children }) {
+    const dispatch = useDispatch();
+    const token = useSelector(state => state.reducer.user.token)
+    const categories = useSelector(state => state.reducer.data.categories)
+
     useEffect(() => {
         const getCsrfToken = async () => {
             await csrfTokenApi();
+            if (categories.length === 0)
+                dispatch(setCats(await getAllCategoriesApi(token)))
         }
 
         getCsrfToken();
     }, [])
-    const token = useSelector(state => state.reducer.user.token)
+
+
     if (token == '' || !token)
         return (<Login />)
     return (
@@ -26,7 +35,10 @@ export default function Layout({ children }) {
             </Head>
 
             <Navbar />
-            <main className="w-100">{children}</main>
+            {categories.length != 0 ?
+                <main className="w-100">{children}</main>
+                : null
+            }
         </div>
     )
 }

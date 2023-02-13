@@ -1,9 +1,17 @@
 import { changeProductElememtApi } from "../../api/poroductApi";
 import Image from 'next/image'
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import Cat from "./cat";
 const Esential = ({ setShowDetail, showDetail, product }) => {
     const token = useSelector(state => state.reducer.user.token)
+    const categories = useSelector(state => state.reducer.data.categories)
 
+    const [mainCat, setMainCat] = useState(product.categories.filter(category => category.type === 1)[0])
+    const [subCat, setSubCat] = useState(product.categories.filter(category => category.type === 2)[0])
+
+    const mainCats = categories.filter(category => category.type === 1)
+    const [subCats, setSubCats] = useState(categories.filter(category => category.marboot == mainCat.category_id))
     const changeElement = async (e) => {
         let data = {
             value: e.target.value,
@@ -15,7 +23,13 @@ const Esential = ({ setShowDetail, showDetail, product }) => {
         await changeProductElememtApi(data);
     }
 
+    useEffect(() => {
+        setSubCats(categories.filter(category => category.marboot == mainCat.category_id))
+    }, [mainCat])
 
+    useEffect(()=>{
+        console.log(subCats)
+    },[subCats])
 
     return (
         <table className="table table-striped  table-hover  p-5">
@@ -41,10 +55,10 @@ const Esential = ({ setShowDetail, showDetail, product }) => {
                     </td>
 
                     <td>
-                        {product.categories.filter(category => category.type === 1)[0].name}
+                        <Cat productCat={mainCat.category_id} productId={product.id} setMainCat={setMainCat} type="main" cats={mainCats} />
                     </td>
                     <td>
-                        {product.categories.filter(category => category.type === 2)[0].name}
+                        <Cat productCat={subCat.category_id} productId={product.id} type="sub" cats={subCats} parent={mainCat.category_id} />
                     </td>
                 </tr>
             </tbody>

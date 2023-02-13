@@ -106,3 +106,19 @@ export const removeProductPhotoApi = async (info) => {
         return e.response;
     }
 };
+
+export const changeProductCategoryApi = async (data) => {
+    try {
+        const config = {
+            headers: { Authorization: `Bearer ${data.token}` },
+            'content-type' : 'multipart/form-data'
+        };
+        const res = await http.post(`${http.url}/admin/product/change-product-category`, data, config);
+        console.log(res.data)
+        return res.data;
+    } catch (e) {
+        console.log(e)
+        return e.response;
+    }
+};
+

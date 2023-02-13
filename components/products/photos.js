@@ -12,7 +12,6 @@ const Photos = ({ product }) => {
     const [id, setId] = useState(false)
     useEffect(() => {
         // console.log(id)
-        console.log(subPhotos)
     }, [id, subPhotos])
     const uploadFile = async (e) => {
         setId(e.target.getAttribute('data-name') === 'main' ? 0 : e.target.getAttribute('data-id'))
