@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return Category::all();
+        $category = Category::withCount('products');
+        return $category->get();
     }
 
     /**
@@ -49,7 +50,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('token');
+        
+        // change name
+        if($data['name'] == 'name'){
+            $category = Category::find($id);
+            $category->name = $data['value'];
+            $category->save();
+        }
     }
 
     /**

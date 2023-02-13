@@ -39,4 +39,5 @@ Route::middleware([AdminToken::class])->group(function () {
     Route::get('/admin/get-glasses',[\App\Http\Controllers\Admin\AdminController::class,'getGlasses']);
     Route::post('/admin/product/change-photo',[\App\Http\Controllers\Admin\AdminController::class,'changePhoto']);
     Route::post('/admin/product/remove-photo',[\App\Http\Controllers\Admin\AdminController::class,'removePhoto']);
+    Route::post('/admin/product/change-product-category',[\App\Http\Controllers\Admin\AdminController::class,'changeProductCategory']);
  });

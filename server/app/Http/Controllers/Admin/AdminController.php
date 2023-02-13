@@ -24,7 +24,7 @@ class AdminController extends Controller
         $path =  base_path('../public_html/product-photo/');
         $product = Product::find($product_id);
         // برای عوض کردن عکس اصلی محصول
-        
+
         if ($id == '0') {
             if (glob($path . $product->photo))
                 unlink($path . $product->photo);
@@ -57,10 +57,19 @@ class AdminController extends Controller
         }
     }
 
-    public function removePhoto(Request $request){
+    public function removePhoto(Request $request)
+    {
         $id = $request->id;
         $photo = ProductSubPhoto::find($id);
         $photo->delete();
         return $id;
+    }
+
+
+    public function changeProductCategory(Request $request)
+    {
+        $data = $request->except('token');
+
+        $product = Product::find($data['product_id'])->categories()->sync([$data['cat_1'], $data['cat_2']]);
     }
 }
