@@ -26,7 +26,7 @@ class ProductController extends Controller
     {
         $products = Product::with('categories');
 
-        $products->select(['id', 'name', 'serial', 'price', 'sale', 'photo','content']);
+        $products->select(['id', 'name', 'serial', 'price', 'sale', 'photo', 'content']);
         $products->with(['categories' => function ($query) {
             $query->addSelect('*');
         }]);
@@ -40,7 +40,7 @@ class ProductController extends Controller
             $query->orderBy('position');
             $query->addSelect('*');
         }]);
-        
+
         return $products->get();
     }
 
@@ -62,7 +62,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->name;
+        $
+        return $data;
+        $path =  base_path('../public_html/product-photo/');
+        $product = new  Product;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $file_name = $request->file('image')->getClientOriginalName();
+            $product->photo = $file_name;
+            $image->move($path, $file_name);
+        }
+
+
     }
 
     /**
@@ -114,6 +126,4 @@ class ProductController extends Controller
     {
         //
     }
-
-
 }
