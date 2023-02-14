@@ -122,3 +122,20 @@ export const changeProductCategoryApi = async (data) => {
     }
 };
 
+
+
+export const addProductApi = async (data,token) => {
+    try {
+        const config = {
+            headers: { Authorization: `Bearer ${token}` },
+            'content-type' : 'multipart/form-data'
+        };
+        const res = await http.post(`${http.url}/admin/products`, data, config);
+        console.log(res.data)
+        return res.data;
+    } catch (e) {
+        console.log(e)
+        return e.response;
+    }
+};
+
