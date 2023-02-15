@@ -60,7 +60,12 @@ class AdminController extends Controller
     public function removePhoto(Request $request)
     {
         $id = $request->id;
+        $path = base_path('../public_html/product-subphotos/');
+
         $photo = ProductSubPhoto::find($id);
+        if (glob($path . $photo->photo))
+            unlink($path . $photo->photo);
+
         $photo->delete();
         return $id;
     }

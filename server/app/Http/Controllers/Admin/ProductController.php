@@ -62,18 +62,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $name = $request->name;
-        $
-        return $data;
-        $path =  base_path('../public_html/product-photo/');
+        $data['name'] = $request->name;
+        $data['serial'] = $request->serial;
+        $data['main_cat'] = $request->main_cat;
+        $data['sub_cat'] = $request->sub_cat;
         $product = new  Product;
+        $product->name = $data['name'];
+        $product->serial = $data['serial'];
+
+        $path =  base_path('../public_html/product-photo/');
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $file_name = $request->file('image')->getClientOriginalName();
+            $file_name = $data['serial'] . 'main_photo';
             $product->photo = $file_name;
             $image->move($path, $file_name);
         }
-
+        
+        $product->save();
+        $product = Product::find($product->id)->categories()->sync([$data['main_cat'], $data['sub_cat']]);
 
     }
 
@@ -124,6 +131,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
     }
 }
